@@ -15,7 +15,13 @@ export function linkifyMessage(): void {
 }
 
 function makeLinksClickable(element: any) {
+  const linkifyOption: Parameters<typeof linkifyElement>[1] = {
+    validate(value) {
+      return !value.startsWith('fs.inf.in.shizuoka.ac.jp');
+    },
+  };
+
   if (element instanceof HTMLElement) {
-    linkifyElement(element);
+    linkifyElement(element, linkifyOption);
   }
 }
