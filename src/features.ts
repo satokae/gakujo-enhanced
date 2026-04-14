@@ -2,6 +2,7 @@ import { addCalendarDownloadButton } from './features/addCalendarDownloadButton'
 import { addCustomMenu } from './features/addCustomMenu';
 import { changeSelectValue } from './features/changeSelectValue';
 import { hidePerformance } from './features/hidePerformance';
+import { hideReportNotification } from './features/hideReportNotification';
 import { linkifyMessage } from './features/linkifyMessage';
 import { loginAuto } from './features/loginAuto';
 import { sortSelectOptions } from './features/sortSelectOptions';
@@ -66,5 +67,11 @@ export const features: Feature[] = [
     key: 'feature_linkify_message',
     matchTitle: ['連絡詳細', 'シラバス詳細'],
     func: linkifyMessage,
+  },
+  {
+    label: '既読のレポート登録通知を隠す',
+    key: 'feature_hide_report_notification',
+    matchTitle: ['連絡一覧'],
+    func: hideReportNotification,
   },
 ];
