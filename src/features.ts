@@ -1,6 +1,7 @@
 import { addCalendarDownloadButton } from './features/addCalendarDownloadButton';
 import { addCustomMenu } from './features/addCustomMenu';
 import { addKeyboardShortcuts } from './features/addKeyboardShortcuts';
+import { addWordCounter } from './features/addWordCounter';
 import { changeSelectValue } from './features/changeSelectValue';
 import { hidePerformance } from './features/hidePerformance';
 import { hideReportNotification } from './features/hideReportNotification';
@@ -11,6 +12,7 @@ import { sortSelectOptions } from './features/sortSelectOptions';
 import customMenuStyle from './styles/customMenu.css';
 import fixFocusingStyle from './styles/fixFocusing.css';
 import theme from './styles/theme.css';
+import wordCounterStyle from './styles/wordCounter.css';
 
 export interface Feature {
   label: string;
@@ -87,5 +89,12 @@ export const features: Feature[] = [
     key: 'feature_no_focus_on_hidden_popup',
     matchTitle: [/^.*$/],
     style: fixFocusingStyle,
+  },
+  {
+    label: '課題ページで文字数カウンターを追加',
+    key: 'feature_add_character_count',
+    matchTitle: ['課題・アンケート提出'],
+    func: addWordCounter,
+    style: wordCounterStyle,
   },
 ];

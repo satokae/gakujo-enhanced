@@ -1,0 +1,4 @@
+.c-form-auxiliary:has(> input, > textarea)::after {
+  content: attr(data-word-count);
+  margin-left: 0.5em;
+}
